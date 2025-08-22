@@ -18,10 +18,11 @@ body {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
+      
     }
     .card {
       background: #fff;
-      border: 1px solid #ddd;
+      border: 5px solid #4a90e2 ;
       border-radius: 10px;
       padding: 15px;
       text-align: center;
@@ -46,3 +47,31 @@ body {
       text-align: center;
       font-size: 14px;
     }
+    nav {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    button {
+      display: flexbox;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button2 {
+      display: flexbox;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #e94e77;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+   

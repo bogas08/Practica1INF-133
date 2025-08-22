@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Practica1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <header>
+        <h1>RECETAS 2025 - PROGRAMACIÓN WEB III</h1>
+        <h2>Las mejores recetas</h2>
+    </header>
+
+  <div class="grid" id="resultado">Cargando recetas...</div>
+
+  <footer>
+    <p><strong>Participantes:</strong> Jose armando yujra arce</p>
+    <p><strong>Participantes:</strong> Gabriel Zeus Cutile Lopez</p>
+  </footer>
+
+  <script>
+    const url = "https://dummyjson.com/recipes";
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const recetas = data.recipes;
+        let html = "";
+
+        recetas.slice(0, 15).forEach(receta => {
+          html += `
+            <div class="card">
+              <img src="${receta.image}" alt="${receta.name}">
+              <h2>${receta.name}</h2>
+              <p><strong>ID:</strong> ${receta.id}</p>
+              <p><strong>Cocina:</strong> ${receta.cuisine}</p>
+              <p><strong>Tiempo:</strong> ${receta.cookTimeMinutes} min</p>
+            </div>
+          `;
+        });
+
+        document.getElementById("resultado").innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById("resultado").innerHTML = "Error al cargar recetas.";
+        console.error(error);
+      });
+  </script> 
+    </body>
+</html>
